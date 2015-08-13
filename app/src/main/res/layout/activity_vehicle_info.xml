@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/vehicle_name_text"
             android:layout_gravity="center_horizontal"
-            android:text="Enter vehicle name" />
+            android:hint="@string/vehicle_name_hint"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             android:ems="10"
             android:id="@+id/vehicle_miles_text"
             android:layout_gravity="center_horizontal"
-            android:text="Enter miles on odometer" />
+            android:hint="@string/vehicle_miles_hint"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -51,7 +51,7 @@
             android:ems="10"
             android:id="@+id/vehicle_gallons_text"
             android:layout_gravity="center_horizontal"
-            android:text="Enter gallons in tank" />
+            android:hint="@string/vehicle_gallons_hint"/>
 
         <Button
             android:layout_width="230dp"

@@ -48,6 +48,7 @@ public class VehicleInfoActivity extends ActionBarActivity {
 
     }
 
+
     //Submit form button onClick
     //Makes new vehicle object
 
