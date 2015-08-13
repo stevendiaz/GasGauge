@@ -7,4 +7,8 @@
     <string name="vehicle_miles_hint">Enter miles on odometer</string>
     <string name="vehicle_gallons_hint">Enter fuel tank gallons</string>
     <string name="title_activity_check_miles">CheckMilesActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="text_check_miles">Check Mileage</string>
+    <string name="text_fill_up">Fill Up</string>
+    <string name="text_update_vehicle">Update Vehicle</string>
 </resources>

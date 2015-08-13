@@ -20,6 +20,10 @@
             android:name=".CheckMilesActivity"
             android:label="@string/title_activity_check_miles" >
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
     </application>
 
 </manifest>
