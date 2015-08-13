@@ -9,6 +9,12 @@ public class Vehicle {
     private int averageMPG;
     private int gallonsInTank;
 
+    public Vehicle(String name, int odometer, int gallons){
+        vehicleName = name;
+        this.odometer = odometer;
+        gallonsInTank = gallons;
+    }
+
     public String getVehicleName() {
         return vehicleName;
     }
@@ -39,5 +45,10 @@ public class Vehicle {
 
     public void setGallonsInTank(int gallonsInTank) {
         this.gallonsInTank = gallonsInTank;
+    }
+
+    @Override
+    public String toString(){
+        return "Name: " +vehicleName+ " odometer: " +odometer+ " gallons in tank: " + gallonsInTank;
     }
 }
