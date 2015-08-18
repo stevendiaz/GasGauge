@@ -56,10 +56,7 @@ public class CheckMilesActivity extends ActionBarActivity {
             int oldMiles = userData.getInt(Vehicle.ODOMETER_KEY, -1);
             int gallonsInTank = userData.getInt(Vehicle.GALLONS_KEY, -1);
 
-            mMilesLeft.setText(getMilesLeft(MPG, oldMiles, currentMiles, gallonsInTank));
-
-            //update odometer
-            editor.putInt(Vehicle.ODOMETER_KEY, currentMiles);
+            mMilesLeft.setText(Integer.toString(getMilesLeft(MPG, oldMiles, currentMiles, gallonsInTank)));
 
         }
 
