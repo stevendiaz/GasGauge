@@ -1,17 +1,50 @@
 package net.stevendiaz.gasgauge;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class FillUpActivity extends ActionBarActivity {
+
+    private EditText mGallonsOnFillUp;
+    private EditText mUpdatedMiles;
+    private Button mGetMPGButton;
+    private TextView mDisplayMPG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fill_up);
+
+        SharedPreferences userData = getSharedPreferences(Vehicle.SHARED_PREFERENCES, Context.MODE_PRIVATE);
+
+        //Hook up views to view objects
+        mGallonsOnFillUp = (EditText)findViewById(R.id.fillup_gallons_text);
+        mGetMPGButton = (Button)findViewById(R.id.get_mpg_button);
+        mDisplayMPG = (TextView)findViewById(R.id.display_mpg_text);
+        if(userData.getInt(Vehicle.MPG_KEY, -1) == -1){
+            mDisplayMPG.setText("No MPG found");
+        }
+        else {
+            mDisplayMPG.setText(userData.getInt(Vehicle.MPG_KEY, -1));
+        }
+
+
+
+    }
+
+    public void calculateMPG(View view){
+        int gallonsOnFillUp = Integer.parseInt(mGallonsOnFillUp.getText().toString());
+
+
     }
 
 

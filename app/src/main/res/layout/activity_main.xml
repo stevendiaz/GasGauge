@@ -14,7 +14,8 @@
         android:text="@string/text_check_miles"
         android:id="@+id/button_check_miles"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="startCheckMilesActivity" />
 
     <Button
         android:layout_width="wrap_content"
@@ -25,7 +26,8 @@
         android:layout_alignLeft="@+id/button_check_miles"
         android:layout_alignStart="@+id/button_check_miles"
         android:layout_alignRight="@+id/button_check_miles"
-        android:layout_alignEnd="@+id/button_check_miles" />
+        android:layout_alignEnd="@+id/button_check_miles"
+        android:onClick="startFillUpActivity" />
 
     <Button
         android:layout_width="wrap_content"
@@ -33,5 +35,6 @@
         android:text="@string/text_update_vehicle"
         android:id="@+id/button_update_vehicle"
         android:layout_below="@+id/button_check_miles"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="startVehicleInfoActivity" />
 </RelativeLayout>

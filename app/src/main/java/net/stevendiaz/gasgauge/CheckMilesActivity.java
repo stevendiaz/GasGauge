@@ -43,8 +43,9 @@ public class CheckMilesActivity extends ActionBarActivity {
 
         //TODO: check is Odometer exists
         // Check if new miles is > than old miles
+        // Assumes MPG has already been calculated
         if(userData.getInt(Vehicle.MPG_KEY, -1) == -1){
-            Toast.makeText(this, "Can not calculate miles", Toast.LENGTH_LONG);
+            Toast.makeText(this, "Can not calculate miles", Toast.LENGTH_LONG).show();
         }
         else {
             //get MPG
@@ -55,7 +56,7 @@ public class CheckMilesActivity extends ActionBarActivity {
             int oldMiles = userData.getInt(Vehicle.ODOMETER_KEY, -1);
             int gallonsInTank = userData.getInt(Vehicle.GALLONS_KEY, -1);
 
-            mMilesLeft.setText(getMPG(MPG, oldMiles, currentMiles, gallonsInTank));
+            mMilesLeft.setText(getMilesLeft(MPG, oldMiles, currentMiles, gallonsInTank));
 
             //update odometer
             editor.putInt(Vehicle.ODOMETER_KEY, currentMiles);
@@ -64,7 +65,7 @@ public class CheckMilesActivity extends ActionBarActivity {
 
     }
 
-    public int getMPG(int MPG, int oldMiles, int currentMiles, int gallonsInTank){
+    public int getMilesLeft(int MPG, int oldMiles, int currentMiles, int gallonsInTank){
         double milesTraveled = (double)(currentMiles - oldMiles);
         double gallonsLeft = gallonsInTank - (milesTraveled / MPG);
         return (int)gallonsLeft * MPG;
