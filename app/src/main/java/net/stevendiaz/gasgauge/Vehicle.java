@@ -4,10 +4,20 @@ package net.stevendiaz.gasgauge;
  * Created by stevendiaz on 8/12/15.
  */
 public class Vehicle {
+
+
     private String vehicleName;
     private int odometer;
     private int averageMPG;
     private int gallonsInTank;
+
+
+    public static String SHARED_PREFERENCES = "getsharedpreferences";
+    public static String MILES_KEY = "miles";
+    public static String NAME_KEY = "vehiclename";
+    public static String ODOMETER_KEY = "odometer";
+    public static String GALLONS_KEY = "gallons";
+    public static String VEHICLE_SHARED_PREF = "vehicleinfo";
 
     public Vehicle(String name, int odometer, int gallons){
         vehicleName = name;

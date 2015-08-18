@@ -58,7 +58,8 @@
             android:layout_height="wrap_content"
             android:text="Enter"
             android:id="@+id/vehicle_enter_button"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:onClick="saveVehicleData" />
 
     </LinearLayout>
 </RelativeLayout>

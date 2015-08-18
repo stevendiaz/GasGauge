@@ -24,6 +24,10 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main" >
         </activity>
+        <activity
+            android:name=".FillUpActivity"
+            android:label="@string/title_activity_fill_up" >
+        </activity>
     </application>
 
 </manifest>

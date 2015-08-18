@@ -1,17 +1,49 @@
 package net.stevendiaz.gasgauge;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private Button mFillUpButton;
+    private Button mCheckMileage;
+    private Button mUpdateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Hook up button to button objects
+        mCheckMileage = (Button)findViewById(R.id.button_check_miles);
+        mCheckMileage.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //new activity means new intent
+            }
+        });
+
+        mFillUpButton = (Button)findViewById(R.id.button_fill_up);
+        mFillUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //new activity means new intent
+            }
+        });
+
+        mUpdateButton = (Button)findViewById(R.id.button_fill_up);
+        mUpdateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //new activity means new intent
+            }
+        });
+
     }
 
 

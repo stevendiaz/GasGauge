@@ -1,8 +1,9 @@
 package net.stevendiaz.gasgauge;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,32 +21,50 @@ public class VehicleInfoActivity extends ActionBarActivity {
     private Button mEnterButton;
     private Vehicle mVehicle;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_info);
         //Method to hook up the buttons
 
+        //Get shared preferences object
+        SharedPreferences userData = getSharedPreferences(Vehicle.SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor preferenceEditor = userData.edit();
+
+
+        //gets data if it exists
+        //if data hasn't been entered yet then
         mVehicleNameField = (EditText)findViewById(R.id.vehicle_name_text);
+
+        String mVehiclename = userData.getString(Vehicle.NAME_KEY, "");
+        mVehicleNameField.setText(mVehiclename);
 
         mOdometerField = (EditText)findViewById(R.id.vehicle_miles_text);
 
+        int mOdometer = userData.getInt(Vehicle.ODOMETER_KEY, 0);
+        mOdometerField.setText(Integer.toString(mOdometer));
+
         mGallonsField = (EditText)findViewById(R.id.vehicle_gallons_text);
+        int mGallons = userData.getInt(Vehicle.GALLONS_KEY, 0);
+        mGallonsField.setText(Integer.toString(mGallons));
 
         mEnterButton = (Button)findViewById(R.id.vehicle_enter_button);
-        mEnterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String vehicleName = mVehicleNameField.getText().toString();
-                int miles = Integer.parseInt(mOdometerField.getText().toString());
-                int gallonsInTank = Integer.parseInt(mGallonsField.getText().toString());
 
-                Vehicle mCurrentVehicle = new Vehicle(vehicleName, miles, gallonsInTank);
-                Log.d("Vehicle Activity", mCurrentVehicle.toString());
-            }
-        });
+    }
 
+    public void saveVehicleData(View view){
+        SharedPreferences userData = getSharedPreferences(Vehicle.SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = userData.edit();
+
+        String vehicleName = mVehicleNameField.getText().toString();
+        int miles = Integer.parseInt(mOdometerField.getText().toString());
+        int gallonsInTank = Integer.parseInt(mGallonsField.getText().toString());
+
+        editor.putString(Vehicle.NAME_KEY, vehicleName);
+        editor.putInt(Vehicle.ODOMETER_KEY, miles);
+        editor.putInt(Vehicle.GALLONS_KEY, gallonsInTank);
+
+        editor.apply();
     }
 
 
