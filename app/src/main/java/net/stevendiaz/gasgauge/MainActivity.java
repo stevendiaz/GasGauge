@@ -36,7 +36,7 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        mUpdateButton = (Button)findViewById(R.id.button_fill_up);
+        mUpdateButton = (Button)findViewById(R.id.button_update_vehicle);
         mUpdateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

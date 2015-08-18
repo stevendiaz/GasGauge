@@ -35,15 +35,16 @@
             android:layout_width="194dp"
             android:layout_height="wrap_content"
             android:text="Check Miles Left"
-            android:id="@+id/button"
-            android:layout_gravity="center_horizontal" />
+            android:id="@+id/check_miles_button"
+            android:layout_gravity="center_horizontal"
+            android:onClick="displayMilesLeft" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="16"
-            android:id="@+id/textView2"
+            android:id="@+id/display_miles_left"
             android:layout_gravity="center_horizontal"
             android:textStyle="bold" />
 

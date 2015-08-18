@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".VehicleInfoActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,8 +21,8 @@
             android:label="@string/title_activity_check_miles" >
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main" >
+            android:name=".VehicleInfoActivity"
+            android:label="VehicleInfoActivity" >
         </activity>
         <activity
             android:name=".FillUpActivity"
