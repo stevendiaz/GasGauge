@@ -31,7 +31,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/vehicle_name_text"
+            android:id="@+id/vehicleinfo_name"
             android:layout_gravity="center_horizontal"
             android:hint="@string/vehicle_name_hint"/>
 
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/vehicle_miles_text"
+            android:id="@+id/vehicleinfo_miles"
             android:layout_gravity="center_horizontal"
             android:hint="@string/vehicle_miles_hint"/>
 
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/vehicle_gallons_text"
+            android:id="@+id/vehicleinfo_gallons"
             android:layout_gravity="center_horizontal"
             android:hint="@string/vehicle_gallons_hint"/>
 
@@ -57,7 +57,7 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:text="Enter"
-            android:id="@+id/vehicle_enter_button"
+            android:id="@+id/vehicleinfo_enterbutton"
             android:layout_gravity="center_horizontal"
             android:onClick="saveVehicleData" />
 

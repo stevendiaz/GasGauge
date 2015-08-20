@@ -21,9 +21,9 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         //Hook up button to button objects
-        mCheckMileage = (Button)findViewById(R.id.button_check_miles);
-        mFillUpButton = (Button)findViewById(R.id.button_fill_up);
-        mUpdateButton = (Button)findViewById(R.id.button_update_vehicle);
+        mCheckMileage = (Button)findViewById(R.id.main_check_miles);
+        mFillUpButton = (Button)findViewById(R.id.main_fill_up);
+        mUpdateButton = (Button)findViewById(R.id.main_update_vehicle);
 
     }
 

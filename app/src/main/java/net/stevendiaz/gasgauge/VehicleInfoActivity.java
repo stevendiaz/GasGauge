@@ -34,21 +34,21 @@ public class VehicleInfoActivity extends ActionBarActivity {
 
         //gets data if it exists
         //if data hasn't been entered yet then
-        mVehicleNameField = (EditText)findViewById(R.id.vehicle_name_text);
+        mVehicleNameField = (EditText)findViewById(R.id.vehicleinfo_name);
 
         String mVehiclename = userData.getString(Vehicle.NAME_KEY, "");
         mVehicleNameField.setText(mVehiclename);
 
-        mOdometerField = (EditText)findViewById(R.id.vehicle_miles_text);
+        mOdometerField = (EditText)findViewById(R.id.vehicleinfo_miles);
 
         int mOdometer = userData.getInt(Vehicle.ODOMETER_KEY, 0);
         mOdometerField.setText(Integer.toString(mOdometer));
 
-        mGallonsField = (EditText)findViewById(R.id.vehicle_gallons_text);
+        mGallonsField = (EditText)findViewById(R.id.vehicleinfo_gallons);
         int mGallons = userData.getInt(Vehicle.GALLONS_KEY, 0);
         mGallonsField.setText(Integer.toString(mGallons));
 
-        mEnterButton = (Button)findViewById(R.id.vehicle_enter_button);
+        mEnterButton = (Button)findViewById(R.id.vehicleinfo_enterbutton);
 
     }
 

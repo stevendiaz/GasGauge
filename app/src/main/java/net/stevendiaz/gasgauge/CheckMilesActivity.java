@@ -28,9 +28,9 @@ public class CheckMilesActivity extends ActionBarActivity {
         SharedPreferences userData = getSharedPreferences(Vehicle.SHARED_PREFERENCES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = userData.edit();
 
-        mMilesUpdate = (EditText)findViewById(R.id.miles_update);
+        mMilesUpdate = (EditText)findViewById(R.id.check_miles_text);
 
-        mMilesLeft = (TextView)findViewById(R.id.display_miles_left);
+        mMilesLeft = (TextView)findViewById(R.id.check_miles_left);
 
         mCheckMiles = (Button)findViewById(R.id.check_miles_button);
 

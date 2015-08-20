@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/miles_update"
+            android:id="@+id/check_miles_text"
             android:layout_gravity="center_horizontal"
             android:hint="Current Miles"
             android:paddingTop="20dp" />
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="16"
-            android:id="@+id/display_miles_left"
+            android:id="@+id/check_miles_left"
             android:layout_gravity="center_horizontal"
             android:textStyle="bold" />
 

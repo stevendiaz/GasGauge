@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Get MPG"
-            android:id="@+id/get_mpg_button"
+            android:id="@+id/fillup_mpg_button"
             android:layout_gravity="center_horizontal"
             android:onClick="calculateMPG" />
 
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="0"
-            android:id="@+id/display_mpg_text"
+            android:id="@+id/fillup_mpg_text"
             android:layout_gravity="center_horizontal" />
 
         <TextView

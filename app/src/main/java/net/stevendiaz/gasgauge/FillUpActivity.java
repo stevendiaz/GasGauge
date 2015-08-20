@@ -30,8 +30,8 @@ public class FillUpActivity extends ActionBarActivity {
         //Hook up views to view objects
         mGallonsOnFillUp = (EditText)findViewById(R.id.fillup_gallons_text);
         mOdometerMiles = (EditText)findViewById(R.id.fillup_odometer_text);
-        mGetMPGButton = (Button)findViewById(R.id.get_mpg_button);
-        mDisplayMPG = (TextView)findViewById(R.id.display_mpg_text);
+        mGetMPGButton = (Button)findViewById(R.id.fillup_mpg_button);
+        mDisplayMPG = (TextView)findViewById(R.id.fillup_mpg_text);
 
         //TODO: move to another method maybe??
         if(userData.getInt(Vehicle.MPG_KEY, -1) == -1){
