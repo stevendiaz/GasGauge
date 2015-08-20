@@ -32,6 +32,8 @@ public class FillUpActivity extends ActionBarActivity {
         mOdometerMiles = (EditText)findViewById(R.id.fillup_odometer_text);
         mGetMPGButton = (Button)findViewById(R.id.get_mpg_button);
         mDisplayMPG = (TextView)findViewById(R.id.display_mpg_text);
+
+        //TODO: move to another method maybe??
         if(userData.getInt(Vehicle.MPG_KEY, -1) == -1){
             mDisplayMPG.setText("No MPG found");
         }
