@@ -1,12 +1,15 @@
 package net.stevendiaz.gasgauge;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -28,8 +31,14 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void startCheckMilesActivity(View view){
-        Intent intent = new Intent(this, CheckMilesActivity.class);
-        startActivity(intent);
+        SharedPreferences userData = getSharedPreferences(Vehicle.SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        if(userData.getInt(Vehicle.MPG_KEY, -1) == -1) {
+            Toast.makeText(this, "Calculate MPG before checking miles", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Intent intent = new Intent(this, CheckMilesActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void startFillUpActivity(View view){

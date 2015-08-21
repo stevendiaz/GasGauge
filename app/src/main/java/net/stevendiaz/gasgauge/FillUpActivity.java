@@ -60,19 +60,21 @@ public class FillUpActivity extends ActionBarActivity {
         //increment the count
         int mpgCount = userData.getInt(Vehicle.COUNT_KEY, 0) + 1;
         //if MPG hasn't been stored, it doesn't need to be averaged
+        int avgMPG;
         if(userData.getInt(Vehicle.MPG_KEY, -1) == -1) {
-            editor.putInt(Vehicle.MPG_KEY, MPG);
+            avgMPG = MPG;
         }
         else {
-            editor.putInt(Vehicle.MPG_KEY, (MPG + userData.getInt(Vehicle.MPG_KEY, 0) / mpgCount));
+            avgMPG = MPG + userData.getInt(Vehicle.MPG_KEY, 0) / mpgCount;
         }
 
 
         //update saved data
         editor.putInt(Vehicle.COUNT_KEY, mpgCount);
+        editor.putInt(Vehicle.MPG_KEY, avgMPG);
         editor.apply();
 
-        mDisplayMPG.setText(Integer.toString(MPG));
+        mDisplayMPG.setText(Integer.toString(avgMPG));
     }
 
     public void resetMPG(View view){
