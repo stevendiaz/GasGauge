@@ -30,7 +30,6 @@ public class VehicleInfoActivity extends ActionBarActivity {
 
         //Get shared preferences object
         SharedPreferences userData = getSharedPreferences(Vehicle.SHARED_PREFERENCES, Context.MODE_PRIVATE);
-        SharedPreferences.Editor preferenceEditor = userData.edit();
 
 
         //gets data if it exists

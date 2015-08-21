@@ -26,20 +26,16 @@ public class CheckMilesActivity extends ActionBarActivity {
         setContentView(R.layout.activity_check_miles);
 
         SharedPreferences userData = getSharedPreferences(Vehicle.SHARED_PREFERENCES, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = userData.edit();
 
         mMilesUpdate = (EditText)findViewById(R.id.check_miles_text);
 
         mMilesLeft = (TextView)findViewById(R.id.check_miles_left);
 
         mCheckMiles = (Button)findViewById(R.id.check_miles_button);
-
     }
 
     public void displayMilesLeft(View view){
         SharedPreferences userData = getSharedPreferences(Vehicle.SHARED_PREFERENCES, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = userData.edit();
-
 
         //TODO: check is Odometer exists
         // Check if new miles is > than old miles
@@ -56,7 +52,6 @@ public class CheckMilesActivity extends ActionBarActivity {
             int gallonsInTank = userData.getInt(Vehicle.GALLONS_KEY, -1);
 
             mMilesLeft.setText(Integer.toString(getMilesLeft(MPG, oldMiles, currentMiles, gallonsInTank)));
-
         }
 
     }
