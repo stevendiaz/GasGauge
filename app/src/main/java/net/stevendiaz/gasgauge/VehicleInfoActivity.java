@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /// Use this Activity to take in Vehicle Information and create a Vehicle Object
 
@@ -65,6 +66,8 @@ public class VehicleInfoActivity extends ActionBarActivity {
         editor.putInt(Vehicle.GALLONS_KEY, gallonsInTank);
 
         editor.apply();
+
+        Toast.makeText(this, "Vehicle info saved", Toast.LENGTH_LONG).show();
     }
 
 

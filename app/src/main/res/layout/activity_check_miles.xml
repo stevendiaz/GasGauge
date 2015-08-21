@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="16"
+            android:text="0"
             android:id="@+id/check_miles_left"
             android:layout_gravity="center_horizontal"
             android:textStyle="bold" />

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +18,7 @@ public class FillUpActivity extends ActionBarActivity {
     private EditText mOdometerMiles;
     private Button mGetMPGButton;
     private TextView mDisplayMPG;
+    private Button mResetMPGButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class FillUpActivity extends ActionBarActivity {
         mOdometerMiles = (EditText)findViewById(R.id.fillup_odometer_text);
         mGetMPGButton = (Button)findViewById(R.id.fillup_mpg_button);
         mDisplayMPG = (TextView)findViewById(R.id.fillup_mpg_text);
+        mResetMPGButton = (Button)findViewById(R.id.fillup_reset_button);
 
         //TODO: move to another method maybe??
         if(userData.getInt(Vehicle.MPG_KEY, -1) == -1){
@@ -48,18 +49,40 @@ public class FillUpActivity extends ActionBarActivity {
     public void calculateMPG(View view){
         SharedPreferences userData = getSharedPreferences(Vehicle.SHARED_PREFERENCES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = userData.edit();
+
+        //calculates MPG
         int gallonsOnFillUp = Integer.parseInt(mGallonsOnFillUp.getText().toString());
         int updatedMiles = Integer.parseInt(mOdometerMiles.getText().toString());
-        int diffMiles = updatedMiles - userData.getInt(Vehicle.ODOMETER_KEY, -1);
+        int diffMiles = updatedMiles - userData.getInt(Vehicle.ODOMETER_KEY, -1); //TODO: error check this
+        int MPG = diffMiles / gallonsOnFillUp;
 
-        int MPG;
-        MPG = diffMiles / gallonsOnFillUp;
-        Log.d("TAG", "MPG: " +MPG);
-        editor.putInt(Vehicle.MPG_KEY, MPG);
-        editor.putInt(Vehicle.ODOMETER_KEY, updatedMiles);
+        //average in the new MPG
+        //increment the count
+        int mpgCount = userData.getInt(Vehicle.COUNT_KEY, 0) + 1;
+        //if MPG hasn't been stored, it doesn't need to be averaged
+        if(userData.getInt(Vehicle.MPG_KEY, -1) == -1) {
+            editor.putInt(Vehicle.MPG_KEY, MPG);
+        }
+        else {
+            editor.putInt(Vehicle.MPG_KEY, (MPG + userData.getInt(Vehicle.MPG_KEY, 0) / mpgCount));
+        }
+
+
+        //update saved data
+        editor.putInt(Vehicle.COUNT_KEY, mpgCount);
         editor.apply();
 
         mDisplayMPG.setText(Integer.toString(MPG));
+    }
+
+    public void resetMPG(View view){
+        SharedPreferences userData = getSharedPreferences(Vehicle.SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = userData.edit();
+
+        editor.putInt(Vehicle.MPG_KEY, 0);
+        editor.putInt(Vehicle.COUNT_KEY, 0);
+
+        mDisplayMPG.setText(Integer.toString(0));
     }
 
 

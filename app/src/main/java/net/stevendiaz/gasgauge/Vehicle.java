@@ -12,11 +12,12 @@ public class Vehicle {
     private int gallonsInTank;
 
 
-    public static String SHARED_PREFERENCES = "getsharedpreferences";
-    public static String NAME_KEY = "vehiclename";
-    public static String ODOMETER_KEY = "odometer";
-    public static String GALLONS_KEY = "gallons";
-    public static String MPG_KEY = "avgmpg";
+    public static String SHARED_PREFERENCES = "vehicle.sharedpreferences";
+    public static String NAME_KEY = "vehicle.name";
+    public static String ODOMETER_KEY = "vehicle.odometer";
+    public static String GALLONS_KEY = "vehicle.gallons";
+    public static String MPG_KEY = "vehicle.mpg";
+    public static String COUNT_KEY = "vehicle.countkey";
 
 
     public Vehicle(String name, int odometer, int gallons){

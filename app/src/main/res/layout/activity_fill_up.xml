@@ -43,9 +43,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="0"
             android:id="@+id/fillup_mpg_text"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:text="0" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,5 +54,13 @@
             android:text="miles per gallon"
             android:id="@+id/textView4"
             android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:id="@+id/fillup_reset_button"
+            android:layout_gravity="center_horizontal"
+            android:onClick="resetMPG"/>
     </LinearLayout>
 </RelativeLayout>

@@ -49,7 +49,6 @@ public class CheckMilesActivity extends ActionBarActivity {
         }
         else {
             //get MPG
-            //TODO: Finish calcuation
 
             int currentMiles = Integer.parseInt(mMilesUpdate.getText().toString());
             int MPG = userData.getInt(Vehicle.MPG_KEY, -1);
