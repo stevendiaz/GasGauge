@@ -40,7 +40,7 @@ public class CheckMilesActivity extends ActionBarActivity {
         //TODO: check is Odometer exists
         // Check if new miles is > than old miles
         // Assumes MPG has already been calculated
-        if(userData.getInt(Vehicle.MPG_KEY, -1) == -1){
+        if(userData.getInt(Vehicle.MPG_KEY, -1) == -1) {
             Toast.makeText(this, "Can not calculate miles", Toast.LENGTH_LONG).show();
         }
         else {
