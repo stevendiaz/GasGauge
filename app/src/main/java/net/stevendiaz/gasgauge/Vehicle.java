@@ -11,5 +11,5 @@ public class Vehicle {
     public static String GALLONS_KEY = "vehicle.gallons";
     public static String MPG_KEY = "vehicle.mpg";
     public static String COUNT_KEY = "vehicle.countkey";
-    
+
 }

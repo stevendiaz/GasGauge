@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,16 +35,18 @@ public class FillUpActivity extends ActionBarActivity {
         mDisplayMPG = (TextView)findViewById(R.id.fillup_mpg_text);
         mResetMPGButton = (Button)findViewById(R.id.fillup_reset_button);
 
-        //TODO: move to another method maybe??
+        displayMPGText(userData);
+
+    }
+
+    public void displayMPGText(SharedPreferences userData) {
+        Log.d("tag", "displaympg called.");
         if(userData.getInt(Vehicle.MPG_KEY, -1) == -1){
             mDisplayMPG.setText("No MPG found");
         }
         else {
             mDisplayMPG.setText(Integer.toString(userData.getInt(Vehicle.MPG_KEY, -1)));
         }
-
-
-
     }
 
     public void calculateMPG(View view){
